@@ -1,0 +1,55 @@
+/* ── Africana Design System v4 ── */
+
+:root {
+  --font-display: 'Bebas Neue', 'Impact', sans-serif;
+  --font-serif:   'DM Serif Display', Georgia, serif;
+  --font-body:    'Space Grotesk', system-ui, sans-serif;
+
+  /* Light editorial palette (OkayAfrica-inspired) */
+  --cream:        #F7F3ED;
+  --cream-dark:   #EDE8E0;
+  --ink:          #0F0F0F;
+  --ink-muted:    #5a5a5a;
+  --ink-faint:    #999;
+  --terra:        #C85530;
+  --terra-light:  #F2E8E3;
+  --gold:         #D4860A;
+  --green:        #1A6B3C;
+  --green-light:  #E6F2EC;
+  --blue:         #1A4A8A;
+}
+
+body, input, button, select, textarea {
+  font-family: var(--font-body);
+}
+
+/* Kente stripe */
+.kente-stripe {
+  background: repeating-linear-gradient(
+    90deg,
+    #C85530 0px,  #C85530 8px,
+    #D4860A 8px,  #D4860A 16px,
+    #0F0F0F 16px, #0F0F0F 22px,
+    #1A6B3C 22px, #1A6B3C 30px,
+    #0F0F0F 30px, #0F0F0F 36px
+  );
+}
+
+/* Marquee */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* Panel slide in */
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+.slide-in-right { animation: slide-in-right 0.32s cubic-bezier(0.22,1,0.36,1) forwards; }
